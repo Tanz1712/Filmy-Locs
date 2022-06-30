@@ -1,0 +1,29 @@
+<br />
+<h4>List of all movies</h4>
+
+<hr />
+
+{{#each movies}}
+
+  <div class="movie-card">
+
+    <h5>Name: {{name}}</h5>
+
+    <p>Description: {{description}}</p>
+
+    <img class="movie-img" src="{{imageUrl}}" alt="{{name}}" />
+
+    <br />
+
+    <h6>Owner: {{owner}}</h6>
+
+    <a href="/movies/{{_id}}">See more</a>
+
+    <hr />
+  </div>
+
+{{else}}
+
+  <p>There are no movies yet!</p>
+
+{{/each}}
