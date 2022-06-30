@@ -1,3 +1,5 @@
+// routes/auth.routes.js
+
 const { Router } = require("express");
 const router = new Router();
 
@@ -15,9 +17,9 @@ router.get("/signup", isLoggedOut, (req, res) => res.render("auth/signup"));
 
 // POST route ==> to process form data
 router.post("/signup", isLoggedOut, (req, res, next) => {
-  
+   console.log("The form data: ", req.body);
+
   const { username, email, password } = req.body;
- // console.log("The form data: ", req.body);
 
   // make sure users fill all mandatory fields:
   if (!username || !email || !password) {
@@ -53,7 +55,7 @@ router.post("/signup", isLoggedOut, (req, res, next) => {
       });
     })
     .then((userFromDB) => {
-     // console.log("Newly created user is: ", userFromDB);
+      console.log("Newly created user is: ", userFromDB);
       res.redirect("/userProfile");
     })
     .catch((error) => {
