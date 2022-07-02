@@ -1,0 +1,21 @@
+{{!-- views/books/movie-edit.hbs --}}
+ 
+<h2>Edit the movie: {{movie.name}}</h2>
+ 
+<form action="/userProfile/movies/{{movie._id}}/edit" method="post" enctype="multipart/form-data">
+ 
+  <label>Name:</label>
+    <input type="text" name="name" value="{{movie.name}}" />
+
+    <label>Description: </label>
+    <textarea type="text" name="description" cols="30" rows="4">{{movie.description}}</textarea>
+
+     <div>
+        <label>Image:
+          <input type="file" name="project-2-images" />
+          <input type="text" name="existingImage" hidden value="{{movie.imageUrl}}">
+        </label>
+      </div>
+ 
+  <button>Save changes</button>
+</form>
