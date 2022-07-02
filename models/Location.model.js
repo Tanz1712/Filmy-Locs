@@ -1,10 +1,11 @@
-/* const { Schema, model } = require("mongoose");
+ const { Schema, model } = require("mongoose");
 
-const locationSchema = new Schema({
-  user: { type: Schema.Types.ObjectId, ref: "User" },
-  comment: { type: String, required: true, maxlength: 200 },
+const locationSchema = new Schema({ 
+city: String,
+country:String,
+
 });
 
 const Location = model("Location", locationSchema);
 
-module.exports = Location; */
+module.exports = Location; 
