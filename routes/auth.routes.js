@@ -17,7 +17,7 @@ router.get("/signup", isLoggedOut, (req, res) => res.render("auth/signup"));
 
 // POST route ==> to process form data
 router.post("/signup", isLoggedOut, (req, res, next) => {
-   console.log("The form data: ", req.body);
+  console.log("The form data: ", req.body);
 
   const { username, email, password } = req.body;
 
@@ -127,13 +127,9 @@ router.get("/userProfile", isLoggedIn, (req, res) => {
   res.render("users/user-profile", { userInSession: req.session.currentUser });
 });
 
-
-
-
 router.post("/logout", isLoggedIn, (req, res) => {
   req.session.destroy();
   res.redirect("/");
 });
-
 
 module.exports = router;

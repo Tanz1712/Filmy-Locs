@@ -7,7 +7,6 @@ const userSchema = new Schema(
       trim: true,
       required: [true, "Username is required."],
       unique: true,
-      
     },
     email: {
       type: String,
@@ -16,17 +15,15 @@ const userSchema = new Schema(
       match: [/^\S+@\S+\.\S+$/, "Please use a valid email address."],
       unique: true,
       lowercase: true,
-      trim: true
+      trim: true,
     },
     passwordHash: {
       type: String,
-      required: [true, "Password is required."]
+      required: [true, "Password is required."],
     },
-    movies: [{ type: Schema.Types.ObjectId, ref: 'Movie' }]
   },
-  
   {
-    timestamps: true
+    timestamps: true,
   }
 );
 

@@ -9,7 +9,7 @@
 >
 
   <label>Title:</label>
-  <input type="text" name="title" value="{{movie.title}}" required/>
+  <input type="text" name="title" value="{{movie.title}}" required />
 
   <div>
     <label>Image:
@@ -27,27 +27,21 @@
   <input type="text" name="director" value="{{movie.director}}" />
 
   <label> Enter Cast/Casts (do not forget comma, if more than one): </label>
-  <input name="cast" value="{{movie.cast}}" required>
+  <input name="cast" value="{{movie.cast}}" required />
 
   <label>Plot: </label>
-  <textarea
-    type="text"
-    name="plot"
-    cols="45"
-    rows="5"
-  >{{movie.plot}}</textarea>
+  <textarea type="text" name="plot" cols="45" rows="5">{{movie.plot}}</textarea>
 
   <label>Release Date: </label>
   <input type="date" name="releaseDate" value="{{movie.releaseDate}}" />
 
-<!--  <label>Country:</label>
+  <!--  <label>Country:</label>
   <input type="text" name="country" value="{{movie.country}}" />-->
 
-
-<!-- <label for="locations"> Choose Location/Locations: </label>
+  <!-- <label for="locations"> Choose Location/Locations: </label>
   <select name="locations" id="locations" multiple> -->
 
-<!--  <label>Locations:</label>
+  <!--  <label>Locations:</label>
   <input type="text" name="locations" value="{{movie.locations}}" />-->
 
   <button>Save changes</button>

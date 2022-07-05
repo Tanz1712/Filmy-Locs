@@ -10,16 +10,18 @@ const movieSchema = new Schema(
       type: String,
       required: [true, "imageUrl is required."],
     },
+    imageUrl: {
+      type: String,
+      required: [true, "imageUrl is required."],
+    },
     director: String,
-    cast:[String],
+    cast: [String],
     plot: String,
     releaseDate: {
       type: Date,
     },
     country: String,
-    owner: { type: Schema.Types.ObjectId, ref: "User" },
-    locations: [],
-    //locations: [{ type: Schema.Types.ObjectId, ref: "Location" }],
+    locations: [{ type: Schema.Types.ObjectId, ref: "Location" }],
   },
   {
     timestamps: true,
