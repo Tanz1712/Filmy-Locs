@@ -3,34 +3,34 @@
 
 <hr />
 
-{{!-- since we passed allTheMoviesFromDB as `movies`,
-we can iterate over it here with #each--}}
+{{! since we passed allTheMoviesFromDB as `movies`,
+we can iterate over it here with #each}}
 
 {{#each movies}}
 
   <div class="movie-card">
 
-    <h5>Name: {{name}}</h5>
+    <h5>Title: {{this.title}} </h5>
 
-    <img class="movie-img" src="{{imageUrl}}" alt="{{name}}" />
+    <img class="movie-img" src="{{this.imageUrl}}" alt="{{this.title}}" />
 
     <br />
 
-    <a href="/userProfile/movies/{{_id}}">See movie details</a> {{!-- link that points to the details page --}}
-    <a href="/userProfile/movies/{{_id}}/edit">Edit</a> {{!-- link to redirect to the edit form for each specific book  --}}
+    <a href="/userProfile/movies/{{this._id}}">See movie details</a>
+    {{! link that points to the details page }}
+    <a href="/userProfile/movies/{{this._id}}/edit">Edit</a>
+    {{! link to redirect to the edit form for each specific movie  }}
 
-     {{!-- add the form to handle the POST request to remove a specific book  --}}
-    <form action="/userProfile/movies/{{_id}}/delete" method="POST">
+    {{! add the form to handle the POST request to remove a specific movie  }}
+    <form action="/userProfile/movies/{{this._id}}/delete" method="POST">
       <button>Delete</button>
     </form>
 
     <hr />
- 
+  </div>
 
 {{else}}
 
   <p>There are no movies yet!</p>
-
- </div>
 
 {{/each}}

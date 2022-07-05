@@ -24,13 +24,14 @@ module.exports = (app) => {
       saveUninitialized: false,
       cookie: {
         httpOnly: true,
-        maxAge: 60000, // 60 * 1000 ms === 1 min
+        maxAge: 86400, // 1 day
       }, // ADDED code below !!!
       store: MongoStore.create({
         mongoUrl:
           process.env.MONGODB_URI ||
           "mongodb://localhost/project-2",
         // ttl => time to live
+        // 60 * 1000 ms === 1 min
         // ttl: 60 * 60 * 24 // 60sec * 60min * 24h => 1 day
       }),
     })

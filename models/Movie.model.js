@@ -1,15 +1,33 @@
 const { Schema, model } = require("mongoose");
 
-const movieSchema = new Schema({
-    title: String,
-    Director: String,
+const movieSchema = new Schema(
+  {
+    title: {
+      type: String,
+      required: [true, "title is required."],
+    },
+    imageUrl: {
+      type: String,
+      required: [true, "imageUrl is required."],
+    },
+    imageUrl: {
+      type: String,
+      required: [true, "imageUrl is required."],
+    },
+    director: String,
     cast: [String],
-    image: String,
-    loctions: [{ type: Schema.Types.ObjectId, ref: "Location" }],
+    plot: String,
+    releaseDate: {
+      type: Date,
+    },
     country: String,
-   
-  });
+    locations: [{ type: Schema.Types.ObjectId, ref: "Location" }],
+  },
+  {
+    timestamps: true,
+  }
+);
 
-const Movie = model("Movie", movieSchema)
+const Movie = model("Movie", movieSchema);
 
 module.exports = Movie;

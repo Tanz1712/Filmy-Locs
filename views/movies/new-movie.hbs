@@ -5,14 +5,50 @@
 
   <form action="/userProfile/movies/create" method="POST" enctype="multipart/form-data">
 
-    <label>Name:</label>
-    <input type="text" name="name" required />
-
-    <label>Description: </label>
-    <textarea type="text" name="description" cols="30" rows="4" required></textarea>
+    <label>Title:</label>
+    <input type="text" name="title" required />
 
     <label>Image:</label>
     <input type="file" name="project-2-images" required />
+
+    <label for="director"> Directed By: </label>
+    <input type="text" name="director">
+
+    <label>Enter Cast/Casts (do not forget comma, if more than one): </label>
+    <input type="text" name="cast" /required>
+
+<!-- <label for="cast"> Choose Cast/Casts: </label>
+  <select name="cast" id="cast" multiple> 
+    <option value=""></option>
+    <option value="Shah Ruk Khan"></option>
+    <option value="Kareena Kapoor"></option>
+    <option value="Shaheed Kapoor"></option>
+    <option value="Akshay Kumar"></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    <option value=""></option>
+    </select>-->
+    
+    <label>plot: </label> 
+    <textarea type="text" name="plot" cols="45" rows="5" ></textarea>
+
+    <label>Release Date:</label>
+    <input type="date" name="releaseDate"  />
+
+   <label>Country:</label>
+    <input type="text" name="country" required />
+
+<br> <br>
+
+  <label>Locations:</label>
+    <select type="text" name="locations" required />
+    {{#each loc}}
+    <option value="{{this.id}}">{{this.name}}</option>
+    {{/each}}
+    </select>
 
     <button type="submit">Create</button>
 
