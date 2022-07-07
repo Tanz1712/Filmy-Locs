@@ -1,0 +1,34 @@
+<br />
+<h4>List of all Locations</h4>
+
+<hr />
+
+{{! since we passed allTheLocationsFromDB as `locations`,
+we can iterate over it here with #each}}
+
+{{#each locations}}
+
+  <div class="location-card">
+
+    <h5>Name: {{this.name}} </h5>
+
+    <br />
+
+    <a href="/userProfile/locations/{{this._id}}">See location details</a>
+    {{! link that points to the details page }}
+    <a href="/userProfile/locations/{{this._id}}/edit">Edit</a>
+    {{! link to redirect to the edit form for each specific location  }}
+
+    {{! add the form to handle the POST request to remove a specific location  }}
+    <form action="/userProfile/locations/{{this._id}}/delete" method="POST">
+      <button>Delete</button>
+    </form>
+
+    <hr />
+  </div>
+
+{{else}}
+
+  <p>There are no locations yet!</p>
+
+{{/each}}

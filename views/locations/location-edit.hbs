@@ -1,0 +1,24 @@
+{{! views/locations/location-edit.hbs }}
+
+<h2>Edit the Location: {{location.name}}</h2>
+
+<form
+  action="/userProfile/locations/{{location._id}}/edit"
+  method="post"
+>
+
+  <label>Name:</label>
+  <input type="text" name="name" value="{{location.name}}" required />
+
+  <label>Description:</label>
+  <input type="text" name="description" value="{{location.description}}" />
+
+ <!-- <label>Enter Cast/Casts (do not forget comma, if more than one): </label>
+  <input name="cast" value="{{location.cast}}" required />-->
+
+  <label>Movies:</label>
+  <select type="text" name="movie" value="{{location.movie}}" /></form> </select>
+  <option value=""></option>
+<br> <br>
+  <button>Save changes</button>
+</form>

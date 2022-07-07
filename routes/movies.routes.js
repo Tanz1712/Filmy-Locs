@@ -112,7 +112,6 @@ router.post(
         plot,
         releaseDate,
         country,
-        owner,
         locations,
       },
       { new: true }

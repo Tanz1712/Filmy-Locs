@@ -10,10 +10,6 @@ const movieSchema = new Schema(
       type: String,
       required: [true, "imageUrl is required."],
     },
-    imageUrl: {
-      type: String,
-      required: [true, "imageUrl is required."],
-    },
     director: String,
     cast: [String],
     plot: String,
