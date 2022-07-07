@@ -16,9 +16,17 @@
  <!-- <label>Enter Cast/Casts (do not forget comma, if more than one): </label>
   <input name="cast" value="{{location.cast}}" required />-->
 
-  <label>Movies:</label>
-  <select type="text" name="movie" value="{{location.movie}}" /></form> </select>
-  <option value=""></option>
-<br> <br>
+
+
+
+
   <button>Save changes</button>
 </form>
+
+<h4>Movies:
+  {{#each location.movies}}
+   <a href="/userProfile/movies/{{this._id}}/edit">Edit</a>
+  <img src="{{this.imageUrl}}" alt="{{this.title}}"> 
+    <h4>{{this.title}}</h4>
+    
+  {{/each}}</h4>

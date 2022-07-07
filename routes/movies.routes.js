@@ -54,6 +54,7 @@ router.post(
     })
       .then((createdMovieFromDB) => {
         console.log(`New movie created: ${createdMovieFromDB.title}.`);
+           
       })
       .then(() => res.redirect("/userProfile/movies")) // if everything is fine, redirect to list of movies
       .catch((error) => next(error));

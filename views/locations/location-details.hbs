@@ -4,15 +4,22 @@
 
 <p><h4>Description:</h4>{{location.description}}</p>
 
+
+
 <!--<h5>Cast: 
 {{#each location.cast}}
 <h6>{{this}}</h6>
 {{/each}}</h5>-->
 
+<!--- from {{movies.title}} ♥️ -->
+
 <h4>Movies:
   {{#each location.movies}}
-    <h4>{{this}}</h4>
+  <img src="{{this.imageUrl}}" alt="{{this.title}}"> 
+    <h4>{{this.title}}</h4>
+    
   {{/each}}</h4>
+
 
     
 <hr />
