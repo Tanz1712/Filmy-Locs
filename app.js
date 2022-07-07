@@ -49,9 +49,6 @@ app.use("/", privateRoutes);
 const moviesRoutes = require("./routes/movies.routes");
 app.use("/", moviesRoutes);
 
-const moviesListRoutes = require("./routes/movies-list.routes");
-app.use("/", moviesListRoutes);
-
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
 
