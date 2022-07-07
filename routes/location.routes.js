@@ -80,6 +80,20 @@ router.post(
   }
 );
 
+// POST route to delete a location from the database
+router.post(
+  "/userProfile/locations/:locationId/delete",
+  isLoggedIn,
+  (req, res, next) => {
+    const { locationId } = req.params;
+
+    Location.findByIdAndDelete(locationId)
+
+      .then(() => res.redirect("/userProfile/locations"))
+      .catch((error) => next(error));
+  }
+);
+
   // GET route to retrieve and display all locations
 router.get("/userProfile/locations", isLoggedIn, (req, res, next) => {
   //Get locations from DB
