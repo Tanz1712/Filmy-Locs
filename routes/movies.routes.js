@@ -41,7 +41,6 @@ router.post(
     } = req.body;
 
     console.log(req.body);
-
     Movie.create({
       title,
       imageUrl: req.file.path,
@@ -53,6 +52,9 @@ router.post(
       locations,
     })
       .then((createdMovieFromDB) => {
+
+      return Location.findByIdAndUpdate(locations, {$push: {movies: createdMovieFromDB._id} })
+        
         console.log(`New movie created: ${createdMovieFromDB.title}.`);          
       })
       .then(() => res.redirect("/userProfile/movies")) // if everything is fine, redirect to list of movies
@@ -93,7 +95,7 @@ router.post(
       plot,
       releaseDate,
       country,
-      locations,
+      locations
     } = req.body;
 
     let imageUrl;

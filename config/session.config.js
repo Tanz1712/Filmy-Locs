@@ -27,7 +27,7 @@ module.exports = (app) => {
       saveUninitialized: false,
       cookie: {
         httpOnly: true,
-        maxAge: 86400, // 1 day
+        maxAge: 864000, // 1 day
       }, // ADDED code below !!!
       store: MongoStore.create({
         mongoUrl:

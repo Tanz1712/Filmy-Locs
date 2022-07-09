@@ -35,8 +35,8 @@
   <label>Release Date: </label>
   <input type="date" name="releaseDate" value="{{movie.releaseDate}}" />
 
-  <!--  <label>Country:</label>
-  <input type="text" name="country" value="{{movie.country}}" />-->
+  <label>Country:</label>
+  <input type="text" name="country" value="{{movie.country}}" />
 
   <!-- <label for="locations"> Choose Location/Locations: </label>
   <select name="locations" id="locations" multiple> -->
@@ -49,6 +49,8 @@
 
 <h4>Locations:
   {{#each movie.locations}}  
+
     <h4>{{this.name}}</h4>
-    <a href="/userProfile/locations/{{this._id}}/edit">Edit</a>
+    <a href="/userProfile/locations/{{this._id}}/edit">Update</a>
+
   {{/each}}</h4>
