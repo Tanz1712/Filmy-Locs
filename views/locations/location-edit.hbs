@@ -11,7 +11,7 @@
   <input type="text" name="name" value="{{location.name}}" required />
 
   <label>Description:</label>
-  <input type="text" name="description" value="{{location.description}}" />
+  <input type="text" name="description" value="{{location.description}}" required/>
 
  <!-- <label>Enter Cast/Casts (do not forget comma, if more than one): </label>
   <input name="cast" value="{{location.cast}}" required />-->
@@ -25,8 +25,8 @@
 
 <h4>Movies:
   {{#each location.movies}}
-   <a href="/userProfile/movies/{{this._id}}/edit">Edit</a>
-  <img src="{{this.imageUrl}}" alt="{{this.title}}"> 
+  
     <h4>{{this.title}}</h4>
+     <a href="/userProfile/movies/{{this._id}}/edit">Edit</a>
     
   {{/each}}</h4>

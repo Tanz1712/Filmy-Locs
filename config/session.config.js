@@ -16,6 +16,9 @@ module.exports = (app) => {
   // but will become a real "app" in the app.js
   // when this file gets imported/required there
 
+// required for the app when deployed to Heroku (in production)
+// app.set('trust proxy', 1);
+
   // use session
   app.use(
     session({

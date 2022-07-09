@@ -18,7 +18,7 @@ router.get("/userProfile/locations/create", isLoggedIn, async (req, res) => {
     });
   });
 
-// POST route to submit theform to create and save the new location to the database
+// POST route to submit the form to create and save the new location to the database
 router.post("/userProfile/locations/create", isLoggedIn, (req, res, next) => {
       //Get the form data from the body
       const { name, description, movies } = req.body;
@@ -28,9 +28,6 @@ router.post("/userProfile/locations/create", isLoggedIn, (req, res, next) => {
       Location.create({ name, description, movies })
         .then((createdLocationFromDB) => {
           console.log(`New location created: ${createdLocationFromDB}.`);
-           // when the new location is created, the movies needs to be found and its location updated with the
-      // ID of newly created location
-      //  return Movie.findByIdAndUpdate(movies, { $push: { locations: createdLocationFromDB._id } });  
         })
         .then(() => res.redirect("/userProfile/locations")) // if everything is fine, redirect to list of locations
         .catch((error) => next(error));
@@ -102,7 +99,7 @@ router.post(
 router.get("/userProfile/locations", isLoggedIn, (req, res, next) => {
   //Get locations from DB
   Location.find()
-     // --> we are saying: give me whole movie object with this ID (movies represents an ID in our case)
+     
     .then((allTheLocationsFromDB) => {
       console.log("retrieved locations from DB: ", allTheLocationsFromDB);
 
@@ -124,6 +121,7 @@ router.get("/userProfile/locations/:locationId", isLoggedIn, (req, res, next) =>
   console.log("The ID from the URL is: ", locationId);
 
   Location.findById(locationId)
+  .populate('movies')
     .then((theLocation) => {
     console.log(theLocation);
       res.render("locations/location-details.hbs", { location: theLocation })

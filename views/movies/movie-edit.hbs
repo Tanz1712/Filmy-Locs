@@ -46,3 +46,9 @@
 
   <button>Save changes</button>
 </form>
+
+<h4>Locations:
+  {{#each movie.locations}}  
+    <h4>{{this.name}}</h4>
+    <a href="/userProfile/locations/{{this._id}}/edit">Edit</a>
+  {{/each}}</h4>

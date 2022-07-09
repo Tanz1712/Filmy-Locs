@@ -53,8 +53,7 @@ router.post(
       locations,
     })
       .then((createdMovieFromDB) => {
-        console.log(`New movie created: ${createdMovieFromDB.title}.`);
-           
+        console.log(`New movie created: ${createdMovieFromDB.title}.`);          
       })
       .then(() => res.redirect("/userProfile/movies")) // if everything is fine, redirect to list of movies
       .catch((error) => next(error));
@@ -69,6 +68,7 @@ router.get(
     const { movieId } = req.params;
 
     Movie.findById(movieId)
+    .populate('locations')
 
       .then((movieToEdit) => {
         console.log(movieToEdit);
@@ -165,10 +165,11 @@ router.get("/userProfile/movies/:movieId", isLoggedIn, (req, res, next) => {
   console.log("The ID from the URL is: ", movieId);
 
   Movie.findById(movieId)
-
-    .then((theMovie) =>
+    .populate('locations')
+    .then((theMovie) => {
+      console.log(theMovie);
       res.render("movies/movie-details.hbs", { movie: theMovie })
-    )
+    })
     .catch((error) => {
       console.log("Error while retrieving movie details: ", error);
 
