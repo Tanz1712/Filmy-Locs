@@ -28,9 +28,9 @@ require("./config")(app);
 
 // default value for title local
 const capitalized = require("./utils/capitalized");
-const projectName = "project-2";
+const projectName = "Movie Loc's";
 
-app.locals.appTitle = `${capitalized(projectName)} created with IronLauncher`;
+app.locals.appTitle = `${capitalized(projectName)} developed by Tanvi and Sara`;
 
 // 👇 Start handling routes here
 const index = require("./routes/index.routes");

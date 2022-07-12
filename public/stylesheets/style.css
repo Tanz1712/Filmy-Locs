@@ -1,10 +1,21 @@
 body {
-  padding: 50px;
+  padding: 30px;
   font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;
+ /* background-image: url('../images/retake.jpg');*/
+ /* background-image: url('../images/Vintage_Film_Border-1200px.jpg');*/
+/* background-image: url('../images/jump.jpg');*/
+ /*background-image: url('../images/bg1.jpg');*/
+ /*background-image: url('../images/bg2.webp');*/
+ background-image: url('../images/bg3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*background: #40E0D0;  /* fallback for old browsers */
+  /*background: -webkit-linear-gradient(to right, #FF0080, #FF8C00, #40E0D0);  /* Chrome 10-25, Safari 5.1-6 */
+  /*background: linear-gradient(to right, #FF0080, #FF8C00, #40E0D0); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
  
 a {
-  color: #00b7ff;
+  color: #43a3e6;
   text-decoration: none;
   font-size: 1.5em;
 }
@@ -15,7 +26,7 @@ form {
 }
  
 form label {
-  color: #666;
+  color: black;
   display: inline-block;
   margin-bottom: 10px;
   text-align: center;
@@ -33,7 +44,7 @@ form button {
 }
  
 form button {
-  background: #43a3e6;
+  background: #e69743;
   border: 1px solid #43a3e6;
   border-radius: 4px;
   color: #fff;
@@ -48,8 +59,9 @@ form button {
 }
  
 form button:hover {
-  background: #fff;
-  color: #43a3e6;
+  background: rgba(216, 228, 194, 0.679);
+  color: #e69743;
+  font-weight: bold;
   transition: 0.3s ease background;
 }
  
@@ -63,7 +75,7 @@ form button:hover {
 }
  
 ul {
-  border-bottom: 2px solid #43a3e6;
+ /* border-bottom: 2px solid #43a3e6;*/
   height: 30px;
   padding: 1em 0;
   list-style-type: none;
@@ -86,6 +98,8 @@ ul li {
 #form h2 {
   display: flex;
   justify-content: center;
+  font-style: italic;
+  font-family: cursive;
 }
  
 #to-left {
@@ -115,3 +129,38 @@ ul li {
 	height: 175px;
 }
 
+form label {
+  font-weight: semi-bold;
+  font-size: 1.5em;
+  font-style: italic;
+  font-family: cursive, Verdana, Geneva, Tahoma, sans-serif;
+}
+
+form input, textarea, select {
+  background-color: rgba(216, 228, 194, 0.679);
+  opacity: 0.6;
+}
+
+form {
+  background-color: transparent;
+}
+
+form select {
+  width: 100%;
+}
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: DarkSalmon;
+  color: white;
+  text-align: center;
+  padding: 1px;
+  opacity: 0.7;
+}
+
+.footer a {
+  color: #f02b63;
+  font-size: medium;
+}

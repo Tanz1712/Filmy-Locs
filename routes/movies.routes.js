@@ -142,7 +142,7 @@ router.post(
 );
 
 // GET route to retrieve and display all the movies
-router.get("/userProfile/movies", isLoggedIn, (req, res, next) => {
+router.get("/userProfile/movies", (req, res, next) => {
   //Get movies from DB
   Movie.find()
 
