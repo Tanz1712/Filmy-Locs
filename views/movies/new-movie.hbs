@@ -1,9 +1,9 @@
 <br> <br> <br>
 
 {{#if userInSession}}
-  <h2>Welcome, {{userInSession.username}}!</h2>
-  <h1>Create a movie my friend!</h1>
-  <!-- <img src= "../images/no-privacy1.gif" width="800" alt="funny gif" /> -->
+  <h2>Welcome, {{userInSession.username}}!</h2> <br>
+  <h3>Create a movie my friend!</h3>
+
 
   <form action="/userProfile/movies/create" method="POST" enctype="multipart/form-data">
 
@@ -16,23 +16,8 @@
     <label for="director"> Directed By: </label>
     <input type="text" name="director">
 
-    <label>Enter Cast/Casts (do not forget comma, if more than one): </label>
+    <label>Enter Cast: </label>
     <input type="text" name="cast" /required>
-
-<!-- <label for="cast"> Choose Cast/Casts: </label>
-  <select name="cast" id="cast" multiple> 
-    <option value=""></option>
-    <option value="Shah Ruk Khan"></option>
-    <option value="Kareena Kapoor"></option>
-    <option value="Shaheed Kapoor"></option>
-    <option value="Akshay Kumar"></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    </select>-->
     
     <label>Plot: </label> 
     <textarea type="text" name="plot" cols="45" rows="5" ></textarea>
@@ -43,27 +28,24 @@
    <label>Country:</label>
     <input type="text" name="country" required />
 
-<br> <br>
+<br> 
 
-  <label>Locations:</label>
-    <select placeholder="visible after creating location" type="text" name="locations" multiple  />
+ <label>Locations:</label>
+    <select type="text" name="locations" multiple  />
     {{#each loc}}
+     <option value="" disabled selected hidden>Visible after creating a movie</option>
     <option value="{{this.id}}">{{this.name}}</option>
     {{/each}}
     </select>
 
 <br> <br> <br>
 
-    <button type="submit">Create</button>
-
+    <button type="submit">Create</button> <br>
+<a href="/userProfile">Back</a>
   </form>
 
-  <br />
-  <br />
-
-
- 
-    <a href="/userProfile">Back</a>
+  
+    
   
 
 {{else}}

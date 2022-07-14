@@ -1,9 +1,9 @@
 <br> <br> <br>
 
 {{#if userInSession}}
-  <h2>Welcome, {{userInSession.username}}!</h2>
-  <h1>Add a location my friend!</h1>
-  <!-- <img src= "../images/no-privacy1.gif" width="800" alt="funny gif" /> -->
+  <h2>Welcome, {{userInSession.username}}!</h2> <br>
+  <h3>Add a location my friend!</h3>
+
 
   <form action="/userProfile/locations/create" method="POST">
 
@@ -14,45 +14,23 @@
   <textarea placeholder=" Location related to Movie scenes/songs" type="text" name="description" cols="45" rows="5" required></textarea>
 
 
- <!--   <label>Enter Cast/Casts (do not forget comma, if more than one): </label>
-    <input type="text" name="cast" /required> -->
-
-<!-- <label for="cast"> Choose Cast/Casts: </label>
-  <select name="cast" id="cast" multiple> 
-    <option value=""></option>
-    <option value="Shah Ruk Khan"></option>
-    <option value="Kareena Kapoor"></option>
-    <option value="Shaheed Kapoor"></option>
-    <option value="Akshay Kumar"></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    <option value=""></option>
-    </select>-->
-    
-
 <br> <br>
 
-  <label>Movies:</label>
+<!-- <label>Movies:</label>
     <select placeholder="visible after creating movie" type="text" name="movies" multiple  />
     {{#each mov}}
     <option value="{{this.id}}">{{this.title}}</option>
     {{/each}}
-    </select>
+    </select> -->
 
 <br> <br> <br>
-    <button type="submit">Create</button>
+    <button type="submit">Create</button> <br>
 
+ <a href="/userProfile">Back</a>
   </form>
 
-  <br />
-  <br />
 
-
-
-    <a href="/userProfile">Back</a>
+   
  
 
 {{else}}

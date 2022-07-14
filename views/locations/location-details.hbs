@@ -6,13 +6,15 @@
 <div>
 
   <h3>{{location.name}}</h3>
+  <br />
 
-  <p><h4>Description:</h4>{{location.description}}</p>
+  <h5>{{location.description}} </h5>
+  <br />
 
   <h4>Movie/Movies related location/locations:
 
     {{#each location.movies}}
-      <h4>{{this.title}} ♥️ </h4>
+      <h5>{{this.title}} ♥️ </h5>
     {{/each}}</h4>
 
   <hr />

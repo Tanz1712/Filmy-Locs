@@ -1,12 +1,8 @@
 body {
   padding: 30px;
-  /* font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif;*/
+  /* font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif; */
   font: 14px cursive;
-  /* background-image: url('../images/retake.jpg');*/
-  /* background-image: url('../images/Vintage_Film_Border-1200px.jpg');*/
-  /* background-image: url('../images/jump.jpg');*/
-  /*background-image: url('../images/bg1.jpg');*/
-  /*background-image: url('../images/bg2.webp');*/
+  color: rgb(117, 4, 117);
   background-image: url("../images/bg3.jpg");
 
   background-repeat: no-repeat;

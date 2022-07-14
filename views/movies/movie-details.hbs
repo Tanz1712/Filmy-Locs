@@ -3,29 +3,27 @@
 
 <h2>{{movie.title}}</h2>
 <img class="movie-img" src="{{movie.imageUrl}}" alt="{{movie.title}}" />
-<br />
+<br /> <br>
 
-<h5>Directed by: {{movie.director}}</h5>
-<h5>Cast: 
+<h4>Directed by: {{movie.director}}</h4>
+<h4>Cast: 
 {{#each movie.cast}}
-<h6>{{this}}</h6>
-{{/each}}</h5>
-<p><h6>Plot</h6>: {{movie.plot}}</p>
-<h5>Release Date{{movie.releaseDate}}</h5>
-<h5>Country: {{movie.country}}</h5>
+<h5>{{this}}</h5>
+{{/each}}</h4>
+<h4>Plot: {{movie.plot}}</h4> 
+<h5>Release Date: {{movie.releaseDate}}</h5>
+<h4>Country: {{movie.country}}</h4>
 <br>
 
-<h5>Location/Locations related to Movie/Movies:
+<h4>Location/Locations related to Movie/Movies:
 
   {{#each movie.locations}}
-    <h6>{{this.name}} ♥️ </h6>
-  {{/each}}</h5>
+    <h5>{{this.name}} ♥️ </h5>
+  {{/each}}</h4>
 
 <hr />
     
 </div>
-
-
 
 <a href="/userProfile/movies">Back</a>
 
