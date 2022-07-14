@@ -1,4 +1,6 @@
-<br />
+
+<br /> <br> <br>
+
 <h4>List of all movies</h4>
 
 <hr />
@@ -18,20 +20,23 @@ we can iterate over it here with #each}}
     <br />
   </div>
 
-  <div>
-   
-    <a href="/userProfile/movies/{{this._id}}">See movie details</a>
-    {{! link that points to the details page }}
-    <a href="/userProfile/movies/{{this._id}}/edit">Edit</a>
-    {{! link to redirect to the edit form for each specific movie  }}
 
-    {{! add the form to handle the POST request to remove a specific movie  }}
-    <form action="/userProfile/movies/{{this._id}}/delete" method="POST">
+   <div>
+   
+    {{! link that points to the details page }}
+    <a href="/userProfile/movies/{{this._id}}">See movie details</a> <span>|</span>
+   
+    {{! link to redirect to the edit form for each specific movie  }}
+    <a href="/userProfile/movies/{{this._id}}/edit">Edit</a>
+
+
+  {{! add the form to handle the POST request to remove a specific movie  }}
+    <form  action="/userProfile/movies/{{this._id}}/delete" method="POST">
       <button>Delete</button>
     </form>
+  
   </div>
-
-
+  
     <hr />
   </div>
 

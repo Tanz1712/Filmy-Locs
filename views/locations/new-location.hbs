@@ -1,6 +1,8 @@
+<br> <br> <br>
+
 {{#if userInSession}}
   <h2>Welcome, {{userInSession.username}}!</h2>
-  <h1>Create a location my friend!</h1>
+  <h1>Add a location my friend!</h1>
   <!-- <img src= "../images/no-privacy1.gif" width="800" alt="funny gif" /> -->
 
   <form action="/userProfile/locations/create" method="POST">
@@ -34,7 +36,7 @@
 <br> <br>
 
   <label>Movies:</label>
-    <select type="text" name="movies" multiple  />
+    <select placeholder="visible after creating movie" type="text" name="movies" multiple  />
     {{#each mov}}
     <option value="{{this.id}}">{{this.title}}</option>
     {{/each}}
@@ -49,9 +51,9 @@
   <br />
 
 
-  <button>
+
     <a href="/userProfile">Back</a>
-  </button>
+ 
 
 {{else}}
   <p>Still no logged in user, sorry!</p>

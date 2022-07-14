@@ -52,10 +52,11 @@ router.post(
       locations,
     })
       .then((createdMovieFromDB) => {
+        return Location.findByIdAndUpdate(locations, {
+          $push: { movies: createdMovieFromDB._id },
+        });
 
-      return Location.findByIdAndUpdate(locations, {$push: {movies: createdMovieFromDB._id} })
-        
-        console.log(`New movie created: ${createdMovieFromDB.title}.`);          
+        console.log(`New movie created: ${createdMovieFromDB.title}.`);
       })
       .then(() => res.redirect("/userProfile/movies")) // if everything is fine, redirect to list of movies
       .catch((error) => next(error));
@@ -70,7 +71,7 @@ router.get(
     const { movieId } = req.params;
 
     Movie.findById(movieId)
-    .populate('locations')
+      .populate("locations")
 
       .then((movieToEdit) => {
         console.log(movieToEdit);
@@ -95,7 +96,7 @@ router.post(
       plot,
       releaseDate,
       country,
-      locations
+      locations,
     } = req.body;
 
     let imageUrl;
@@ -167,10 +168,10 @@ router.get("/userProfile/movies/:movieId", isLoggedIn, (req, res, next) => {
   console.log("The ID from the URL is: ", movieId);
 
   Movie.findById(movieId)
-    .populate('locations')
+    .populate("locations")
     .then((theMovie) => {
       console.log(theMovie);
-      res.render("movies/movie-details.hbs", { movie: theMovie })
+      res.render("movies/movie-details.hbs", { movie: theMovie });
     })
     .catch((error) => {
       console.log("Error while retrieving movie details: ", error);

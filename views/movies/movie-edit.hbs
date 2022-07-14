@@ -1,4 +1,7 @@
 {{! views/movies/movie-edit.hbs }}
+<br />
+<br />
+<br />
 
 <h2>Edit the movie: {{movie.title}}</h2>
 
@@ -26,8 +29,13 @@
   <label>Directed by:</label>
   <input type="text" name="director" value="{{movie.director}}" />
 
-  <label>Enter Cast/Casts (do not forget comma, if more than one): </label>
-  <input name="cast" value="{{movie.cast}}" required />
+  <label>Enter Cast/Casts: </label>
+  <input
+    name="cast"
+    value="{{movie.cast}}"
+    placeholder="do not forget comma, if more than one"
+    required
+  />
 
   <label>Plot: </label>
   <textarea type="text" name="plot" cols="45" rows="5">{{movie.plot}}</textarea>
@@ -38,17 +46,11 @@
   <label>Country:</label>
   <input type="text" name="country" value="{{movie.country}}" />
 
-  <!-- <label for="locations"> Choose Location/Locations: </label>
-  <select name="locations" id="locations" multiple> -->
-
-  <!--  <label>Locations:</label>
-  <input type="text" name="locations" value="{{movie.locations}}" />-->
-
   <button>Save changes</button>
 </form>
 
 <h4>Locations:
-  {{#each movie.locations}}  
+  {{#each movie.locations}}
 
     <h4>{{this.name}}</h4>
     <a href="/userProfile/locations/{{this._id}}/edit">Update</a>

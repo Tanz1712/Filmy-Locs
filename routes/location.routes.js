@@ -10,31 +10,30 @@ const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
 
 // GET route to display the form to create new Location
 router.get("/userProfile/locations/create", isLoggedIn, async (req, res) => {
-    const mov = await Movie.find();
-    console.log(mov);
-    res.render("locations/new-location", {
-      userInSession: req.session.currentUser,
-      mov: mov,
-    });
+  const mov = await Movie.find();
+  console.log(mov);
+  res.render("locations/new-location", {
+    userInSession: req.session.currentUser,
+    mov: mov,
   });
+});
 
 // POST route to submit the form to create and save the new location to the database
 router.post("/userProfile/locations/create", isLoggedIn, (req, res, next) => {
-      //Get the form data from the body
-      const { name, description, movies } = req.body;
-  
-      console.log(req.body);
-  
-      Location.create({ name, description, movies })
-        .then((createdLocationFromDB) => {
-          console.log(`New location created: ${createdLocationFromDB}.`);
-        })
-        .then(() => res.redirect("/userProfile/locations")) // if everything is fine, redirect to list of locations
-        .catch((error) => next(error));
-    }
-  );
+  //Get the form data from the body
+  const { name, description, movies } = req.body;
 
-  // GET route to display the form to update a specific location
+  console.log(req.body);
+
+  Location.create({ name, description, movies })
+    .then((createdLocationFromDB) => {
+      console.log(`New location created: ${createdLocationFromDB}.`);
+    })
+    .then(() => res.redirect("/userProfile/locations")) // if everything is fine, redirect to list of locations
+    .catch((error) => next(error));
+});
+
+// GET route to display the form to update a specific location
 router.get(
   "/userProfile/locations/:locationId/edit",
   isLoggedIn,
@@ -42,7 +41,7 @@ router.get(
     const { locationId } = req.params;
 
     Location.findById(locationId)
-    .populate('movies')
+      .populate("movies")
 
       .then((locationToEdit) => {
         console.log(locationToEdit);
@@ -58,18 +57,14 @@ router.post(
   isLoggedIn,
   (req, res, next) => {
     const { locationId } = req.params;
-    const {
-      name,
-      description,
-      movies
-    } = req.body;
+    const { name, description, movies } = req.body;
 
     Location.findByIdAndUpdate(
       locationId,
       {
         name,
         description,
-        movies
+        movies,
       },
       { new: true }
     )
@@ -95,16 +90,18 @@ router.post(
   }
 );
 
-  // GET route to retrieve and display all locations
-router.get("/userProfile/locations", isLoggedIn, (req, res, next) => {
+// GET route to retrieve and display all locations
+router.get("/userProfile/locations", (req, res, next) => {
   //Get locations from DB
   Location.find()
-     
+
     .then((allTheLocationsFromDB) => {
       console.log("retrieved locations from DB: ", allTheLocationsFromDB);
 
       // we call the render method after we obtain the locations data from the database -> allTheLocationsFromDB
-      res.render("locations/all-locations", { locations: allTheLocationsFromDB });
+      res.render("locations/all-locations", {
+        locations: allTheLocationsFromDB,
+      });
     })
     .catch((error) => {
       console.log(error);
@@ -115,24 +112,27 @@ router.get("/userProfile/locations", isLoggedIn, (req, res, next) => {
 });
 
 // GET route to retrieve and display details of a specific location
-router.get("/userProfile/locations/:locationId", isLoggedIn, (req, res, next) => {
-  const { locationId } = req.params;
+router.get(
+  "/userProfile/locations/:locationId",
+  isLoggedIn,
+  (req, res, next) => {
+    const { locationId } = req.params;
 
-  console.log("The ID from the URL is: ", locationId);
+    console.log("The ID from the URL is: ", locationId);
 
-  Location.findById(locationId)
-  .populate('movies')
-    .then((theLocation) => {
-    console.log(theLocation);
-      res.render("locations/location-details.hbs", { location: theLocation })
-    }) 
-    .catch((error) => {
-      console.log("Error while retrieving location details: ", error);
+    Location.findById(locationId)
+      .populate("movies")
+      .then((theLocation) => {
+        console.log(theLocation);
+        res.render("locations/location-details.hbs", { location: theLocation });
+      })
+      .catch((error) => {
+        console.log("Error while retrieving location details: ", error);
 
-      // Call the error-middleware to display the error page to the user
-      next(error);
-    });
-});
-
+        // Call the error-middleware to display the error page to the user
+        next(error);
+      });
+  }
+);
 
 module.exports = router;

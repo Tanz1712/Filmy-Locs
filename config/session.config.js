@@ -16,8 +16,8 @@ module.exports = (app) => {
   // but will become a real "app" in the app.js
   // when this file gets imported/required there
 
-// required for the app when deployed to Heroku (in production)
-// app.set('trust proxy', 1);
+  // required for the app when deployed to Heroku (in production)
+  // app.set('trust proxy', 1);
 
   // use session
   app.use(
@@ -30,9 +30,7 @@ module.exports = (app) => {
         maxAge: 864000, // 1 day
       }, // ADDED code below !!!
       store: MongoStore.create({
-        mongoUrl:
-          process.env.MONGODB_URI ||
-          "mongodb://localhost/project-2",
+        mongoUrl: process.env.MONGODB_URI || "mongodb://localhost/project-2",
         // ttl => time to live
         // 60 * 1000 ms === 1 min
         // ttl: 60 * 60 * 24 // 60sec * 60min * 24h => 1 day

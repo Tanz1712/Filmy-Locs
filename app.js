@@ -28,9 +28,9 @@ require("./config")(app);
 
 // default value for title local
 const capitalized = require("./utils/capitalized");
-const projectName = "Movie Loc's";
+const projectName = "Filmy Locs";
 
-app.locals.appTitle = `${capitalized(projectName)} developed by Tanvi and Sara`;
+app.locals.appTitle = `${capitalized(projectName)}`;
 
 // 👇 Start handling routes here
 const index = require("./routes/index.routes");
@@ -39,12 +39,6 @@ app.use("/", index);
 // authRouter needs to be added so paste the following lines:
 const authRouter = require("./routes/auth.routes"); 
 app.use("/", authRouter);
-
-const mainRoutes = require("./routes/main.routes");
-app.use("/", mainRoutes);
-
-const privateRoutes = require("./routes/private.routes");
-app.use("/", privateRoutes);
 
 const locationsRoutes = require("./routes/location.routes");
 app.use("/", locationsRoutes);

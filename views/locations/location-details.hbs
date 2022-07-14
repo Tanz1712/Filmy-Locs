@@ -1,27 +1,21 @@
 {{! views/locations/location-details.hbs }}
+<br />
+<br />
+<br />
 
-<h3>{{location.name}}</h3>
+<div>
 
-<p><h4>Description:</h4>{{location.description}}</p>
+  <h3>{{location.name}}</h3>
 
-<br> 
+  <p><h4>Description:</h4>{{location.description}}</p>
 
-<!--<h5>Cast: 
-{{#each location.cast}}
-<h6>{{this}}</h6>
-{{/each}}</h5>-->
+  <h4>Movie/Movies related location/locations:
 
-<!--- from {{movies.title}}  -->
+    {{#each location.movies}}
+      <h4>{{this.title}} ♥️ </h4>
+    {{/each}}</h4>
 
-<h4>Movie/Movies related location/locations:
- 
-  {{#each location.movies}}
- <h4>{{this.title}} ♥️ </h4>  
-  {{/each}}</h4>
-
-
-    
-<hr />
+  <hr />
 
 </div>
 

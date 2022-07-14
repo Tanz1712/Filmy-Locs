@@ -1,4 +1,7 @@
 <br />
+<br />
+<br />
+
 <h4>List of all Locations</h4>
 
 <hr />
@@ -11,25 +14,22 @@ we can iterate over it here with #each}}
   <div class="location-card">
 
     <h5>Name: {{this.name}} </h5>
- <!--   <ul>
-  {{#each movies}}
-    <li>
-        {{ this.name }} by {{this.movies.title}}
-    </li>
-  {{/each}}
-</ul>-->
 
     <br />
 
-    <a href="/userProfile/locations/{{this._id}}">See location details</a>
-    {{! link that points to the details page }}
-    <a href="/userProfile/locations/{{this._id}}/edit">Edit</a>
-    {{! link to redirect to the edit form for each specific location  }}
+    <div>
+      <a href="/userProfile/locations/{{this._id}}">See location details</a>
+      <span>|</span>
+      {{! link that points to the details page }}
+      <a href="/userProfile/locations/{{this._id}}/edit">Edit</a>
+      {{! link to redirect to the edit form for each specific location  }}
 
-    {{! add the form to handle the POST request to remove a specific location  }}
-    <form action="/userProfile/locations/{{this._id}}/delete" method="POST">
-      <button>Delete</button>
-    </form>
+      {{! add the form to handle the POST request to remove a specific location  }}
+      <form action="/userProfile/locations/{{this._id}}/delete" method="POST">
+        <button>Delete</button>
+      </form>
+
+    </div>
 
     <hr />
   </div>
