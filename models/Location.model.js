@@ -1,11 +1,11 @@
- const { Schema, model } = require("mongoose");
+const { Schema, model } = require("mongoose");
 
-const locationSchema = new Schema({ 
-city: String,
-country:String,
-
+const locationSchema = new Schema({
+  name: [String],
+  description: String,
+  movies: [{ type: Schema.Types.ObjectId, ref: "Movie" }],
 });
 
-const Location = model("Location", locationSchema);
+const Locations = model("Locations", locationSchema);
 
-module.exports = Location; 
+module.exports = Locations;

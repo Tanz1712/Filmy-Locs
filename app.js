@@ -46,6 +46,9 @@ app.use("/", mainRoutes);
 const privateRoutes = require("./routes/private.routes");
 app.use("/", privateRoutes);
 
+const locationsRoutes = require("./routes/location.routes");
+app.use("/", locationsRoutes);
+
 const moviesRoutes = require("./routes/movies.routes");
 app.use("/", moviesRoutes);
 

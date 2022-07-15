@@ -1,8 +1,26 @@
-{{!-- views/books/book-details.hbs --}}
+{{! views/movies/movie-details.hbs }}
 
-<h2>{{movie.name}}</h2>
-<img class="movie-img" src="{{movie.imageUrl}}" alt="{{movie.name}}" />
-<br>
-<p>Summary:{{movie.description}}</p>
-<hr>
+<h2>{{movie.title}}</h2>
+<img class="movie-img" src="{{movie.imageUrl}}" alt="{{movie.title}}" />
+<br />
+
+<h5>Directed by: {{movie.director}}</h5>
+<h5>Cast: 
+{{#each movie.cast}}
+<h6>{{this}}</h6>
+{{/each}}</h5>
+<p><h6>Plot</h6>: {{movie.plot}}</p>
+<h5>Release Date{{movie.releaseDate}}</h5>
+<h5>Country: {{movie.country}}</h5>
+<!--<h5>Locations:
+  {{#each movie.locations}}
+    <h6>{{this}}</h6>
+  {{/each}}</h5>-->
+<hr />
+
+    
+</div>
+
+
+
 <a href="/userProfile/movies">Back</a>

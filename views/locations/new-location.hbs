@@ -1,21 +1,19 @@
 {{#if userInSession}}
   <h2>Welcome, {{userInSession.username}}!</h2>
-  <h1>Create a movie my friend!</h1>
+  <h1>Create a location my friend!</h1>
   <!-- <img src= "../images/no-privacy1.gif" width="800" alt="funny gif" /> -->
 
-  <form action="/userProfile/movies/create" method="POST" enctype="multipart/form-data">
+  <form action="/userProfile/locations/create" method="POST">
 
-    <label>Title:</label>
-    <input type="text" name="title" required />
+    <label>Name:</label>
+    <input type="text" name="name" required />
 
-    <label>Image:</label>
-    <input type="file" name="project-2-images" required />
+  <label>Description: </label> 
+  <textarea placeholder=" Location related to Movie scenes/songs" type="text" name="description" cols="45" rows="5" required></textarea>
 
-    <label for="director"> Directed By: </label>
-    <input type="text" name="director">
 
-    <label>Enter Cast/Casts (do not forget comma, if more than one): </label>
-    <input type="text" name="cast" /required>
+ <!--   <label>Enter Cast/Casts (do not forget comma, if more than one): </label>
+    <input type="text" name="cast" /required> -->
 
 <!-- <label for="cast"> Choose Cast/Casts: </label>
   <select name="cast" id="cast" multiple> 
@@ -32,21 +30,13 @@
     <option value=""></option>
     </select>-->
     
-    <label>Plot: </label> 
-    <textarea type="text" name="plot" cols="45" rows="5" ></textarea>
-
-    <label>Release Date:</label>
-    <input type="date" name="releaseDate"  />
-
-   <label>Country:</label>
-    <input type="text" name="country" required />
 
 <br> <br>
 
-  <label>Locations:</label>
-    <select type="text" name="locations" required />
-    {{#each loc}}
-    <option value="{{this.id}}">{{this.name}}</option>
+  <label>Movies:</label>
+    <select type="text" name="movies" multiple required />
+    {{#each mov}}
+    <option value="{{this.id}}">{{this.title}}</option>
     {{/each}}
     </select>
 

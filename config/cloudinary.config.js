@@ -17,8 +17,7 @@ const storage = new CloudinaryStorage({
     allowed_formats: ['jpg', 'png'],
     folder: 'project-2-images' // The name of the folder in cloudinary
     // resource_type: 'raw' => this is in case you want to upload other type of files, not just images
-  }
+  },
 });
  
-//                     storage: storage
 module.exports = multer({ storage }); 
