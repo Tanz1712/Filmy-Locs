@@ -2,7 +2,8 @@ body {
   padding: 30px;
   /* font: 14px 'Lucida Grande', Helvetica, Arial, sans-serif; */
   font: 14px cursive;
-  color: rgb(117, 4, 117);
+  color: rgb(186, 11, 186);
+  
   background-image: url("../images/bg3.jpg");
 
   background-repeat: no-repeat;
@@ -166,3 +167,4 @@ span {
   color: #f02b63;
   font-size: medium;
 }
+

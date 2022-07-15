@@ -3,7 +3,7 @@
 <br />
 <br />
 
-<h2>Edit the Location: {{location.name}}</h2>
+<h2><span style="font-size:26px; color:black;">Edit the Location:</span> {{location.name}}</h2>
 
 <form action="/userProfile/locations/{{location._id}}/edit" method="post">
 
@@ -21,7 +21,7 @@
   <button>Save changes</button>
 </form>
 
-<h4>Movies:
+<h4><span style="font-size:26px; color:black;">Movies:</span>
   {{#each location.movies}}
 
     <h4>{{this.title}}</h4>

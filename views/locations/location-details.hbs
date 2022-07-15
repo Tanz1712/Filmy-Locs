@@ -5,13 +5,13 @@
 
 <div>
 
-  <h3>{{location.name}}</h3>
+  <h1>{{location.name}}</h1>
   <br />
 
-  <h5>{{location.description}} </h5>
+  <h4><span style="font-size:20px; color:black;">Description: </span> {{location.description}} </h4>
   <br />
 
-  <h4>Movie/Movies related location/locations:
+  <h4><span style="font-size:20px; color:black;">Movie/Movies related location/locations: </span>
 
     {{#each location.movies}}
       <h5>{{this.title}} ♥️ </h5>

@@ -1,8 +1,8 @@
 <br> <br> <br>
 
 {{#if userInSession}}
-  <h2>Welcome, {{userInSession.username}}!</h2> <br>
-  <h3>Create a movie my friend!</h3>
+  <h2>Hey {{userInSession.username}}!</h2> 
+  <h3>Let's create a <span style='font-size:50px;'> &#127916;</span>movie my friend!</h3>
 
 
   <form action="/userProfile/movies/create" method="POST" enctype="multipart/form-data">

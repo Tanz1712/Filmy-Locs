@@ -1,21 +1,21 @@
 {{! views/movies/movie-details.hbs }}
 <br> <br> <br>
 
-<h2>{{movie.title}}</h2>
+<h1><span style='font-size:50px;'>&#128253;</span>{{movie.title}}</h1>
 <img class="movie-img" src="{{movie.imageUrl}}" alt="{{movie.title}}" />
 <br /> <br>
 
-<h4>Directed by: {{movie.director}}</h4>
-<h4>Cast: 
+<h4><span style="font-size:20px; color:black;">Directed by:</span> {{movie.director}}</h4>
+<h4><span style="font-size:20px; color:black;">Cast:</span> 
 {{#each movie.cast}}
 <h5>{{this}}</h5>
 {{/each}}</h4>
-<h4>Plot: {{movie.plot}}</h4> 
-<h5>Release Date: {{movie.releaseDate}}</h5>
-<h4>Country: {{movie.country}}</h4>
+<h4><span style="font-size:20px; color:black;">Plot:</span> {{movie.plot}}</h4> 
+<h5><span style="font-size:20px; color:black;">Release Date:</span> {{movie.releaseDate}}</h5>
+<h4><span style="font-size:20px; color:black;">Country:</span> {{movie.country}}</h4>
 <br>
 
-<h4>Location/Locations related to Movie/Movies:
+<h4><span style="font-size:20px; color:black;">Location/Locations related to Movie/Movies:</span>
 
   {{#each movie.locations}}
     <h5>{{this.name}} ♥️ </h5>

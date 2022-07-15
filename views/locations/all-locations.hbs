@@ -2,7 +2,7 @@
 <br />
 <br />
 
-<h4>List of all Locations</h4>
+<h3>List of all Locations 📍</h3>
 
 <hr />
 
@@ -13,14 +13,14 @@ we can iterate over it here with #each}}
 
   <div class="location-card">
 
-    <h5>Name: {{this.name}} </h5>
+    <h2><span style="font-size:26px; color:black;">Name:</span> {{this.name}} </h2>
 
     <br />
 
     <div>
       <a href="/userProfile/locations/{{this._id}}">See location details</a>
-      <span>|</span>
-      {{! link that points to the details page }}
+      <span>|</span> 
+      {{! link that points to the details page }} 
       <a href="/userProfile/locations/{{this._id}}/edit">Edit</a>
       {{! link to redirect to the edit form for each specific location  }}
 
@@ -31,9 +31,9 @@ we can iterate over it here with #each}}
 
     </div>
 
-    <hr />
+    
   </div>
-
+<hr />
 {{else}}
 
   <p>There are no locations yet!</p>
