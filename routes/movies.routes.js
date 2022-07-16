@@ -12,6 +12,9 @@ const fileUploader = require("../config/cloudinary.config");
 // require auth middleware
 const { isLoggedIn, isLoggedOut } = require("../middleware/route-guard.js");
 
+//Get route to display demo movies
+router.get
+
 // GET route to display the form to create a new Movie
 router.get("/userProfile/movies/create", isLoggedIn, async (req, res) => {
   const loc = await Location.find();

@@ -52,7 +52,7 @@ const movies = [
 Movie.create(movies)
   .then((allTheMoviesFromDB) => {
     console.log(`Created ${allTheMoviesFromDB.length} movies`);
-
+  //  .then(() => res.render("/moviesdemo"))
     // Once created, close the DB connection
     mongoose.connection.close();
   })
