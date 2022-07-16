@@ -1,0 +1,24 @@
+{{! views/locations/location-details.hbs }}
+<br />
+<br />
+<br />
+
+<div>
+
+  <h1>{{location.name}}</h1>
+  <br />
+
+  <h4><span style="font-size:20px; color:black;">Description: </span> {{location.description}} </h4>
+  <br />
+
+  <h4><span style="font-size:20px; color:black;">Movie/Movies related location/locations: </span>
+
+    {{#each location.movies}}
+      <h5>{{this.title}} ♥️ </h5>
+    {{/each}}</h4>
+
+  <hr />
+
+</div>
+
+<a href="/userProfile/locations">Back</a>

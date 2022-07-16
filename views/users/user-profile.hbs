@@ -13,37 +13,43 @@
 {{! the new version, with the session: }}
 
 {{#if userInSession}}
-  <h2>Welcome, {{userInSession.username}}!</h2>
-  <h1>This is your profile page my friend!</h1>
-  <button>
-    <a href="/userProfile">Reload this page</a>
+<br> <br> <br>
+  <h2><span style="color:black;font-size:24px">Welcome!</span> {{userInSession.username}} &#129505;</h2> <br>
+  <h3>Let's try Filmy Locs! <span style='font-size:50px;'>&#128253;</span></h3>
+
+  <br> <br> <br>
+
+<div class="but" class="d-grid gap-2 d-md-block">
+  <button type="button" class="btn btn-outline-info">
+    <a href="/userProfile/locations/create">Add Location</a>
   </button>
   <br />
   <br />
+</div>
 
-  <button>
-    <a href="/userProfile/main">Main Page</a>
-  </button>
-  <br />
-  <br />
-
-  <button>
-    <a href="/userProfile/private">Private Page</a>
-  </button>
-  <br />
-  <br />
-
-   <button>
+<div class="but" class="d-grid gap-2 d-md-block">
+  <button type="button" class="btn btn-outline-warning">
     <a href="/userProfile/movies/create">Create a Movie</a>
   </button>
   <br />
   <br />
+</div>
 
-    <button>
+
+<div class="but" class="d-grid gap-2 d-md-block">
+  <button type="button" class="btn btn-outline-danger">
     <a href="/userProfile/movies">List of Movies</a>
   </button>
+  <br />
+  <br />
+</div>
 
 
+<div class="but" class="d-grid gap-2 d-md-block">
+  <button type="button" class="btn btn-outline-secondary">
+    <a href="/userProfile/locations">List of Locations</a>
+  </button>
+</div>
   <br />
   <br />
 

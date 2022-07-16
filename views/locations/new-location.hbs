@@ -1,0 +1,38 @@
+<br> <br> <br>
+
+{{#if userInSession}}
+  <h2>Welcome, {{userInSession.username}}!</h2> <br>
+  <h3>Add a location &#128204; my friend!</h3>
+
+
+  <form action="/userProfile/locations/create" method="POST">
+
+    <label>Name:</label>
+    <input type="text" name="name" required />
+
+  <label>Description: </label> 
+  <textarea placeholder=" Location related to Movie scenes/songs" type="text" name="description" cols="45" rows="5" required></textarea>
+
+
+<br> <br>
+
+ <label>Movies:</label>
+    <select placeholder="visible after creating movie" type="text" name="movies" multiple  />
+    {{#each mov}}
+    <option value="{{this.id}}">{{this.title}}</option>
+    {{/each}}
+    </select> 
+
+<br> <br> <br>
+    <button type="submit">Create</button> <br>
+
+ <a href="/userProfile">Back</a>
+  </form>
+
+
+   
+ 
+
+{{else}}
+  <p>Still no logged in user, sorry!</p>
+{{/if}}

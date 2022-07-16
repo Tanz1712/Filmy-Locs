@@ -1,0 +1,30 @@
+{{! views/locations/location-edit.hbs }}
+<br />
+<br />
+<br />
+
+<h2><span style="font-size:26px; color:black;">Edit the Location:</span> {{location.name}}</h2>
+
+<form action="/userProfile/locations/{{location._id}}/edit" method="post">
+
+  <label>Name:</label>
+  <input type="text" name="name" value="{{location.name}}" required />
+
+  <label>Description:</label>
+  <input
+    type="text"
+    name="description"
+    value="{{location.description}}"
+    required
+  />
+
+  <button>Save changes</button>
+</form>
+
+<h4><span style="font-size:26px; color:black;">Movies:</span>
+  {{#each location.movies}}
+
+    <h4>{{this.title}}</h4>
+    <a href="/userProfile/movies/{{this._id}}/edit">Update</a>
+
+  {{/each}}</h4>
